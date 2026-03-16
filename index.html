@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Prank Sound</title>
+
+<style>
+.container{
+    position: relative;
+    width: 450px;
+}
+
+#muteBtn{
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 15px 40px;
+    font-size: 20px;
+    border-radius: 30px;
+    border: none;
+    background: rgba(80,80,80,0.8);
+    color: white;
+    display: none;
+    cursor: pointer;
+}
+</style>
+
+</head>
+
+<body>
+
+<center>
+
+<div class="container">
+
+<img src="image/photo_6269376256491065305_y.jpg"
+width="660" height="900"
+onclick="startPrank()">
+
+</div>
+<audio id="prank" loop>
+<source src="sound/laughter-fit-male-tomas-herudek-1-00-27 (1).mp3" type="audio/mpeg">
+</audio> <button id="muteBtn" onclick="stopSound()">🔊 Mute</button>
+
+
+<script>
+
+function startPrank(){
+    var sound = document.getElementById("prank");
+    sound.play();               // play sound
+    document.getElementById("muteBtn").style.display="block"; // show mute button
+}
+
+function stopSound(){
+    var sound = document.getElementById("prank");
+    sound.pause();             // stop sound
+    sound.currentTime = 0;     // reset to start
+    document.getElementById("muteBtn").style.display="none"; // hide button
+}
+
+</script>
+
+</center>
+
+</body>
+</html>
